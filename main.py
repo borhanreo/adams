@@ -88,7 +88,7 @@ def main():
 
 if __name__ == '__main__':
     speech.init_speech()
-    # main()
+    main()
     # thread_all_data = threading.Thread(target=main)
     # thread_all_data.daemon = True
     # thread_all_data.start()

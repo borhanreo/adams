@@ -1,5 +1,4 @@
 import time
-
 import pyttsx3
 class SpeechMessage(object):
     def __init__(self):
