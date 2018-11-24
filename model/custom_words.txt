@@ -1,0 +1,7 @@
+n0 tree
+n1 tower
+n2 building
+n3 billboard
+n4 kingfisher
+n5 mobile
+n6 person
