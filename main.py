@@ -1,12 +1,4 @@
-# USAGE
-# python real_time_object_detection.py --prototxt MobileNetSSD_deploy.prototxt --model MobileNetSSD_deploy.caffemodel --source webcam
-
-# import the necessary packages
-import threading
-
-from imutils.video import VideoStream
 import numpy as np
-import sys
 import argparse
 import imutils
 import time
@@ -45,7 +37,7 @@ print("[INFO] starting video stream...")
 
 if args["source"] == "webcam":
     vs = cv2.VideoCapture(0)
-    # vs.set(3, 1280)
+    vs.set(3, 1280)
     # vs.set(4, 1024)
     # vs.set(15, 0.1)
 time.sleep(2.0)
@@ -75,7 +67,8 @@ def main():
                 confidence = detections[0, idx]
                 if i == 0:
                     if ((confidence * 100) > 60.00):
-                        speech.spech(CLASSES[idx])
+                        #speech.speech(CLASSES[idx])
+                        speech.thread_run(CLASSES[idx])
                     text = "Label: {}, {:.2f}%".format(CLASSES[idx], confidence * 100)
                     cv2.putText(frame, text, (5, 25), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
         cv2.imshow("Frame", frame)

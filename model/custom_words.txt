@@ -5,3 +5,4 @@ n3 billboard
 n4 kingfisher
 n5 mobile
 n6 person
+n7 bus
